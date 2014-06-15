@@ -1,0 +1,596 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>Aplic. Web de jQuery Mobile</title>
+<link href="jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
+<script src="jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="jquery.mobile-1.0.min.js" type="text/javascript"></script>
+<script language="javascript">
+//Variables
+var tel;
+var nombre;
+var x;
+var car;
+var cara;
+var carac;
+var caract;
+var carro;
+var ancho;
+var largo;
+var len;
+var may;
+var correo;
+var m=0;
+var k=0;
+var z=0;
+var ar;
+var mayo;
+var cer="MACB17";
+var cero;
+var anch;
+var larg;
+var le;
+var ancho1;
+var largo1;
+var len1;
+var larguese;
+var larguese1;
+var caja;
+var caja1;
+var armando=0;
+
+function Nombre(){
+	nombre=document.getElementById("Nombre").value;
+	may=nombre.toUpperCase();//Convierte a mayusculas
+	document.getElementById("Nombre").value=may;
+	ancho=may.length;//Mide la longitud
+	for(x=0;x<=ancho-1;x++){
+		car=may.charAt(x);//Verifica cada caracter de la posicin x
+		if(((car>='A')&&(car<='Z'))||(car==' '))
+		{
+			}
+		else{
+			alert("Sólo se admiten letras");
+break;		
+			document.getElementById("Nombre").value='';
+		
+			}	
+	}	
+}
+function Email(){
+correo=document.getElementById("Correo").value;
+largo=correo.length;
+armando=correo.length;
+//Se usan dos variables porque 1 mide el largo para el ciclo y el otro para que no se repitan los mensajes sin antes haber metido un dato
+
+if(armando==0)//si el largo del correo 
+{
+	alert("vacio");
+}
+else{
+if(armando>0)//Si hay caracteres
+{
+for(x=0;x<=largo-1;x++){
+cara=correo.charAt(x);
+if(x==0){//compara la primera posicion
+	  if((cara>='0')&&(cara<='9')){
+			  alert("el primer caracter no tiene que ser un numero")
+			  }
+	  }
+	}
+	for(x=0;x<=largo-1;x++){
+    carac=correo.charAt(x);
+	if(carac=='@'){
+		  m++;//
+		  }	  
+		}	
+		  
+	for(x=0;x<=largo-1;x++){
+    caract=correo.charAt(x);
+		if(caract=='.')
+		{
+			k++;
+			}		
+			}
+			 if(m>1)
+	{
+		alert("solo se permite una arroba");
+	
+		
+	}
+	else{
+		if(m==0){
+		alert("se te a olvidado poner @");
+		}
+		
+		}
+		if(k==0){
+				alert("se te a olvidado poner puntos");			
+			}
+			m=0;
+k=0;	
+}
+}  
+  }
+  
+  function Telefono(){
+tel=document.getElementById("Telefono").value;
+len=tel.length;
+for(x=0;x<=len-1;x++)
+{
+	carro=tel.charAt(x);
+	if(((carro>='0')&&(carro<='9'))||((carro==' ')||(carro=='-')))//si el caracter en la posicion x entra dentro del rango del 0 al 9 o se ingresa un espacion o un guion
+	{
+}//no hagas nada
+else
+{
+	
+	alert("Error, solo se admiten numeros");
+	document.getElementById("Telefono").value='';
+break;
+}
+}
+
+  }
+ function Asunto(){
+  	ar=document.getElementById("Asunto").value;
+  	mayo=ar.toUpperCase();
+  	document.getElementById("Asunto").value=mayo;
+  }
+ function  Enviar(){
+  	anch=document.getElementById("Nombre").value;
+        larg=document.getElementById("Telefono").value;
+        le=document.getElementById("Correo").value;
+        caja=document.getElementById("cod2").value;
+	caja1=document.getElementById("Asunto").value;
+		//toma los valores de cada cuadro de texto y los asigna a una nueva variable
+       ancho1=anch.length;
+        largo1=larg.length;
+         len1=le.length;
+          larguese=caja.length;
+           larguese1=caja1.length;
+  			fore=caja.length;
+			//Mide los anchos de cada cuadro de texto
+	cero=document.getElementById("cod2").value;
+  	if(fore==0)//si la cuadro de seguridad no tiene nada
+	{
+		alert("Campo de seguridad vacío");
+		}
+		else{
+			if(fore>1){
+	
+	if(cero==cer){
+		
+  		if((((ancho1==0)||(largo1==0))||((len1==0)||(larguese==0)))||(larguese1==0)||(cero==0)){
+  		alert("Favor de introducir todos los datos");
+  	}
+else{
+	alert("Su mensaje ha sido enviado");
+	document.getElementById("Nombre").value=' ';
+	document.getElementById("Telefono").value=' ';
+	document.getElementById("Correo").value=' ';
+	document.getElementById("cod2").value=' ';
+	document.getElementById("Asunto").value=' ';
+}
+  	}
+  	else{
+  		 alert("Valor del cuadro de seguridad incorrecto");
+  	}
+  }
+		}
+ }
+ 
+</script>
+<style>
+            body{
+                padding:0;
+            }
+            ul{
+                list-style: none;
+            }
+            li{
+                float:left;
+                margin-right: 0%;
+            }
+            li img{
+                cursor: pointer;
+                width:200px;
+                height:200px;
+                padding:3px;
+                border:1px solid gray;
+                background-color: white;
+                margin-right: 5px;
+                box-shadow:1px 1px 5px red;
+				margin-bottom:5px;
+            }
+            .container{
+                width:100%;
+                height: 100%;
+                margin:0 auto;
+
+            }
+           
+           
+            
+           h1{
+               border-bottom: 2px solid gray;
+                color: white;
+                font-family: Broadway;
+                text-shadow: 1px 1px black;
+                margin-top:0;
+				font-size:24px;
+            }
+			 </style>
+</head> 
+<body> 
+
+<div data-role="page" id="page">
+	<div data-role="header">
+		<h1>AnGiieTique</h1>
+	</div>
+    <center><img src="Galeria/Logo.png" width="20%" height="15%"></center>
+	<div data-role="content">	
+		<ul data-role="listview">
+			<li><a href="#page2">Inicio</a></li>
+            <li><a href="#page3">Outfits</a></li>
+            <li><a href="#page4">Zapatos</a></li>
+			<li><a href="#page5">Contáctanos</a></li>
+            <li><a href="#page6">Atención al Cliente</a></li>
+            <li><a href="#page7">Acerca de la empresa</a></li>
+		</ul>		
+	</div>
+    <center><img src="Galeria/Interior.jpg" width="1000px" height="370px"></center>
+	<div data-role="footer">
+		<h4>Cruz Beltrán María Angélica</h4>
+	</div>
+</div>
+
+<div data-role="page" id="page2">
+	<div data-role="header">
+		<h1>¿Quiénes somos?</h1>
+	</div>
+	<div data-role="content">	
+	<center><table width="0" border="0">
+  <tr>
+    <td colspan="2"><img src="Galeria/vogue.jpg" width="100%" height="100%"><center><h1>AnGiieTique</h1></center></td>
+  </tr>
+  <tr>
+    <td><h2>Misión</h2></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>En AnGiieTique nuestra misión es cumplir con el compromiso de ofrecer a todos nuestros clientes la mejor ropa al mejor precio.<br>
+Nos dedicamos a buscar diseñadores que esten realmente interesados en la comodidad de las personas además de estar a la última moda con estilo y vanguardia.</td>
+    <td><img src="Galeria/shakira.jpg" width="40%" height="20%"></td>
+  </tr>
+  <tr>
+    <td><h2>Visión</h2></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Queremos satisfacer las necesidades de todos nuestros clientes, esperando obtener la preferencia de diseñadores que les interese adecuarse a los diferentes status sociales sin discriminar </td>
+    <td><img src="Galeria/pasarela.png" width="55%" height="30%"></td>
+  </tr>
+  <tr>
+    <td><h2>Valores</h2></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Nuestros valores principales son el amor hacia nosotros mismos, pues debes querer y respetar tu cuerpo tal y como es, no olvidemos que existen diferentes complexiones. Tampoco debemos pasar por alto el cuidar nuestra salud.</td>
+    <td><img src="Galeria/smile.jpg" width="60%" height="35%"</td>
+  </tr>
+</table>
+</center>
+
+		
+	</div>
+	<div data-role="footer">
+		<h4>AnGiieTique</h4>
+	</div>
+</div>
+
+<div data-role="page" id="page3">
+	<div data-role="header">
+		<h1>Outfits</h1>
+	</div>
+	<div data-role="content">	
+		<div class="container">
+        
+            <div class="imgParts">
+                <ul>
+                    <li><img src="Outfits/o1.jpg" /></li>
+                    <li><img src="Outfits/o2.jpg" /></li>
+                    <li><img src="Outfits/o3.png" /></li>
+                    <li><img src="Outfits/o4.jpg" /></li>
+                    <li><img src="Outfits/o5.jpg" /></li>
+                    <li><img src="Outfits/o6.jpg" /></li>
+                    <li><img src="Outfits/o7.jpg" /></li>
+                    <li><img src="Outfits/o8.png" /></li>
+                    <li><img src="Outfits/o9.jpg" /></li>
+                    <li><img src="Outfits/o10.png" /></li>
+                    <li><img src="Outfits/o11.png" /></li>
+                    <li><img src="Outfits/o12.jpg" /></li>
+                    <li><img src="Outfits/o13.jpg" /></li>
+                    <li><img src="Outfits/o14.png" /></li>
+                    <li><img src="Outfits/o15.jpg" /></li>
+                    <li><img src="Outfits/o16.png" /></li>
+                    <li><img src="Outfits/o17.jpg" /></li>
+                    <li><img src="Outfits/o18.jpg" /></li>
+                    <li><img src="Outfits/o19.jpg" /></li>
+                    <li><img src="Outfits/o20.png" /></li>
+                    <li><img src="Outfits/o21.jpg" /></li>
+                    <li><img src="Outfits/o22.jpg" /></li>
+                    <li><img src="Outfits/o23.jpg" /></li>
+                    <li><img src="Outfits/o24.jpg" /></li>
+                    <li><img src="Outfits/o25.png" /></li>
+                    <li><img src="Outfits/o26.png" /></li>
+                    <li><img src="Outfits/o27.jpg" /></li>
+                    <li><img src="Outfits/o28.jpg" /></li>
+                    <li><img src="Outfits/o29.png" /></li>
+                    <li><img src="Outfits/o30.png" /></li>
+                    <li><img src="Outfits/o31.png" /></li>
+                    <li><img src="Outfits/o32.png" /></li>
+                    <li><img src="Outfits/o33.jpg" /></li>
+                    <li><img src="Outfits/o34.png" /></li>
+                    <li><img src="Outfits/o35.jpg" /></li>
+                    <li><img src="Outfits/o36.png" /></li>
+                    <li><img src="Outfits/o37.png" /></li>
+                    <li><img src="Outfits/o38.png" /></li>
+                    <li><img src="Outfits/o39.png" /></li>
+                    <li><img src="Outfits/o40.png" /></li>
+                    
+                    
+                </ul>
+            </div>
+            <div id="results">
+            </div>
+        </div>
+        		
+	</div>
+	<div data-role="footer">
+		<h4>AnGiieTique</h4>
+	</div>
+</div>
+
+<div data-role="page" id="page4">
+	<div data-role="header">
+		<h1>Zapatos</h1>
+	</div>
+	<div data-role="content">	
+		<div class="container">
+        
+            <div class="imgParts">
+                <ul>
+                    <li><img src="Shoes/s1.jpg" /></li>
+                    <li><img src="Shoes/s2.jpg" /></li>
+                    <li><img src="Shoes/s3.jpg" /></li>
+                    <li><img src="Shoes/s4.jpg" /></li>
+                    <li><img src="Shoes/s5.jpg" /></li>
+                    <li><img src="Shoes/s6.jpg" /></li>
+                    <li><img src="Shoes/s7.jpg" /></li>
+                    <li><img src="Shoes/s8.jpg" /></li>
+                    <li><img src="Shoes/s9.jpg" /></li>
+                    <li><img src="Shoes/s10.jpg" /></li>
+                    <li><img src="Shoes/s11.jpg" /></li>
+                    <li><img src="Shoes/s12.jpg" /></li>
+                    <li><img src="Shoes/s13.jpg" /></li>
+                    <li><img src="Shoes/s14.jpg" /></li>
+                    <li><img src="Shoes/s15.jpg" /></li>
+                    <li><img src="Shoes/s16.jpg" /></li>
+                    <li><img src="Shoes/s17.jpg" /></li>
+                    <li><img src="Shoes/s18.jpg" /></li>
+                    <li><img src="Shoes/s19.jpg" /></li>
+                    <li><img src="Shoes/s20.jpg" /></li>
+                    <li><img src="Shoes/s21.png" /></li>
+                    <li><img src="Shoes/s22.jpg" /></li>
+                    <li><img src="Shoes/s23.jpg" /></li>
+                    <li><img src="Shoes/s24.jpg" /></li>
+                    <li><img src="Shoes/s25.png" /></li>
+                    <li><img src="Shoes/s26.jpg" /></li>
+                    <li><img src="Shoes/s27.jpg" /></li>
+                    <li><img src="Shoes/s28.png" /></li>
+                    <li><img src="Shoes/s29.jpg" /></li>
+                    <li><img src="Shoes/s30.png" /></li>
+                    <li><img src="Shoes/s31.jpg" /></li>
+                    <li><img src="Shoes/s32.jpg" /></li>
+                    <li><img src="Shoes/s33.jpg" /></li>
+                    <li><img src="Shoes/s34.jpg" /></li>
+                    <li><img src="Shoes/s35.jpg" /></li>
+                    <li><img src="Shoes/s36.jpg" /></li>
+                    <li><img src="Shoes/s37.jpg" /></li>
+                    <li><img src="Shoes/s38.jpg" /></li>
+                    <li><img src="Shoes/s39.jpg" /></li>
+                    <li><img src="Shoes/s40.jpg" /></li>
+                    <li><img src="Shoes/s41.jpg" /></li>
+                    <li><img src="Shoes/s42.png" /></li>
+                    <li><img src="Shoes/s43.jpg" /></li>
+                    <li><img src="Shoes/s44.jpg" /></li>
+                    <li><img src="Shoes/s45.jpg" /></li>
+                    <li><img src="Shoes/s46.jpg" /></li>
+                    <li><img src="Shoes/s47.jpg" /></li>
+                    <li><img src="Shoes/s48.jpg" /></li>
+                    <li><img src="Shoes/s49.jpg" /></li>
+                    <li><img src="Shoes/s50.jpg" /></li>
+                    <li><img src="Shoes/s51.jpg" /></li>
+                    <li><img src="Shoes/s52.jpg" /></li>
+                    <li><img src="Shoes/s53.jpg" /></li>
+                    <li><img src="Shoes/s54.jpg" /></li>
+                    <li><img src="Shoes/s55.jpg" /></li>
+                    <li><img src="Shoes/s56.jpg" /></li>
+                    <li><img src="Shoes/s57.jpg" /></li>
+                    <li><img src="Shoes/s58.jpg" /></li>
+                    <li><img src="Shoes/s59.jpg" /></li>
+                    <li><img src="Shoes/s60.jpg" /></li>
+                    <li><img src="Shoes/s61.jpg" /></li>
+                    <li><img src="Shoes/s62.jpg" /></li>
+                   
+                   
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div id="results">
+            </div>
+        </div>
+        		
+	</div>
+	<div data-role="footer">
+		<h4>AnGiieTique</h4>
+	</div>
+</div>
+</div>
+
+<div data-role="page" id="page5">
+	<div data-role="header">
+		<h1>Contáctanos</h1>
+	</div>
+	<div data-role="content">	
+		<div class="container">
+        
+          <table width="0" border="0">
+          <img src="Galeria/alfombra.jpg" width="50%" height="40%">
+  <tr>
+    <td>Dirección:</td>
+    <td>Calle Chamizal No. 156 Col. Cruz Verde, Izúcar de Matamoros, Puebla</td>
+  </tr>
+  <tr>
+    <td>Correo electrónico:</td>
+    <td>angiie31@gmail.com</td>
+  </tr>
+  <tr>
+    <td>Teléfono:</td>
+    <td>243-172-24-80</td>
+  </tr>
+  <tr>
+    <td>Código postal:</td>
+    <td>74440</td>
+  </tr>
+    <tr>
+    <td>Facebook:</td>
+    <td>OficialAnGiieTique</td>
+  </tr>
+    <tr>
+    <td>Twitter</td>
+    <td>@AnGiieTiqueOficial</td>
+  </tr>
+  <tr>
+  <td colspan="2"></td>
+  </tr>
+  
+</table>
+ <img src="Galeria/mapa.png" width="50%" height="40%">
+
+        </div>   
+           		
+	</div>
+	<div data-role="footer">
+		<h4>AnGiieTique</h4>
+	</div>
+</div>
+
+
+<div data-role="page" id="page6">
+	<div data-role="header">
+		<h1>Atención al Cliente</h1>
+	</div>
+	<div data-role="content">
+  <img src="Galeria/jungle.jpg" width="80%" height="40%">
+    <table width="0" border="0">
+  <tr>
+    <td>Nombre</td>
+    
+    <td><div data-role="fieldcontain">
+      <input type="text" name="textinput" id="Nombre" value="" onBlur="Nombre()"  />
+    </div></td>
+  </tr>
+  <tr>
+    <td>Teléfono</td>
+    <td><div data-role="fieldcontain">
+      <input type="text" name="textinput2" id="Telefono" onBlur="Telefono()" value=""  />
+    </div></td>
+  </tr>
+  <tr>
+    <td>E-mail</td>
+    <td><div data-role="fieldcontain">
+      
+      <input type="text" name="textinput3" onBlur="Email()" id="Correo" value=""  />
+    </div></td>
+  </tr>
+  <tr>
+    <td>Asunto</td>
+    <td><div data-role="fieldcontain">
+      
+      <textarea cols="40" rows="8" name="Asunto" onBlur="Asunto()" id="Asunto"></textarea>
+    </div>
+    </td>
+  </tr>
+  <tr>
+    <td><div data-role="fieldcontain">
+      <label for="textinput7">Seguridad</label>
+      <td><input type="text" name="textinput7" disabled="disabled" id="cod1" value="MACB17"/></td>
+    <td><input type="text" name="textinput5" id="cod2" value=""  /></td>
+    </div></td>
+    
+  </tr>
+  <tr>
+    <td></td>
+    <td><button onClick="Enviar()">Enviar</button></td>
+  </tr>
+ 
+</table>
+
+			
+	</div>
+	<div data-role="footer">
+		<h4>AnGiieTique</h4>
+	</div>
+</div>
+
+<div data-role="page" id="page7">
+	<div data-role="header">
+		<h1>Acerca de mí</h1>
+	</div>
+	<div data-role="content">	
+		<div class="container">
+        
+           <table width="0" border="0">
+  <tr>
+    <td>¡Bienvenido amig@!<br>
+    	Te contaré un poco sobre mí<br>
+        Mi nombre es María Angélica Cruz Beltrán, nací en el estado de Puebla un 31 de diciembre de 1996.<br>
+        Ahora tengo 17 años y estoy cursando el 4° semestre de preparatoria en el CBTis 184<br>
+        Disfruto el estar con mi familia, amo a mi mamá y daría todo por ella. Tengo 3 hermanas y 3 hermanos varones, yo soy la pequeña.<br>
+Entre mis pasatiempos y las cosas que me gustan hacer estan leer, me gusta mucho la literatura, me encanta la poesía; También me gustan los deportes en especial el basketball; también me agrada cocinar. En mis tiempos libres disfruto ver peliculas con mi familia o mi mamá, mis generos prefridos son el drama, comedia, romanticas y terror. Me encanta viajar, explorar y concer nuevos lugares. Me gusta hacer tareas y deberes escuchando música pero sobre todo me fascina bailar y aunque no soy una experta bailo todos los ritmos, al fin el chiste es disfrutarlo.<br>
+Me considero una persona sociable y me es fácil crear lazos de amistad o relación con casi cualquier tipo de personas.<br>
+Algunas metas que tengo son el viajar por todo la república mexicana e incluso conocer partes del mundo. Comprarme un auto y he soñado con un camaro. Despues de concluir con mi carrera deseo tener un buen trabajo. Y desde luego mi meta primordial es formar una familia, con valores y buenos principios.<br>
+Gracias por visitar mi página<br>
+Atentamente<br>
+María A. Cruz Beltrán
+</td>
+</tr>
+<tr>
+<td><center><img src="Galeria/yo.jpg" width="12%" height="40%"></center></td>
+  </tr>
+  <td>Agradecemos a los colaboradores de esta página:<br>
+  <img src="Galeria/kevin.jpg" width="10%" height="9%">::::::::::<img src="Galeria/arii.jpg" width="17%" height="40%">
+  <h2>Kevin y Arii ;)</h2>
+</td>
+<td>
+</td>
+  
+ 
+</table>
+ 
+        </div>   
+           		
+	</div>
+	<div data-role="footer">
+		<h4>AnGiieTique</h4>
+	</div>
+</div>
+
+</body>
+</html>
+
